@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ aar }}</title>
+</head>
+<body>
+    <h2>{{ aar }}</h2>
+    <h3>verv</h3>
+    <table>
+        <tr>
+            <th>Verv</th>
+            <th>Person</th>
+        </tr>
+        {% for vervperiode in vervperiodeliste %}
+            <tr>
+                <td><a href={% url 'vervdetalj' vervperiode.verv.pk%}>{{ vervperiode.verv }}</a></td>
+                <td><a href={% url 'regifant' vervperiode.regifant.pk%}>{{ vervperiode.regifant.navn }}</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

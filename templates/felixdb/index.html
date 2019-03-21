@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FelixDB</title>
+</head>
+<body>
+<h1>Velkommen til FelixDB</h1>
+<h2>Nettsiden for generell pangpleie</h2>
+
+<ul>
+    {% for regifant in regifanter %}
+        <li>
+            <a href="{% url 'regifant' regifant.pk %}">
+                {{ regifant.navn }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

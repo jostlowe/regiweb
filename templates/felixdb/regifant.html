@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ regifant.navn }}</title>
+</head>
+<body>
+    <h2>{{ regifant.navn }}</h2>
+    <p>
+        Info om denne regifanten
+    </p>
+    <h3>verv</h3>
+    <table>
+        <tr>
+            <th>Verv</th>
+            <th>år</th>
+        </tr>
+        {% for vervperiode in vervperiodeliste %}
+            <tr>
+                <td><a href={% url 'vervdetalj' vervperiode.verv.pk%}>{{ vervperiode.verv }}</a></td>
+                <td><a href={% url 'aarsoversikt' vervperiode.aar %}>{{ vervperiode.aar }}</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
