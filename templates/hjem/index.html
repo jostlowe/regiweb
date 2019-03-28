@@ -12,6 +12,7 @@
         <p><a href="{% url 'logout' %}">logg ut</a> </p>
     {% else %}
         <p> Du er ikke logget inn</p>
+        <p> <a href="{% url 'login' %}"> logg inn </a></p>
     {% endif %}
 
 

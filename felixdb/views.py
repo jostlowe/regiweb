@@ -1,9 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from django.template import loader
 from .models import Verv, Regifant, Vervperiode, Uke, Ukeverv, Ukevervperiode
+from django.contrib.auth.decorators import login_required
 
-
+@login_required
 def index(request):
     regifanter = Regifant.objects.all()
     context = {
@@ -83,5 +82,3 @@ def ukedetalj(request, ukeaar):
         'ukevervperioder': ukevervperioder
     }
     return render(request, 'felixdb/ukedetalj.html', context)
-
-# Create your views here.
