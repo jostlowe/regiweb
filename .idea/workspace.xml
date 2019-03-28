@@ -2,17 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c6ff421-503d-41ed-b7fd-524774f023cd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/hjem/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/hjem/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/felixdb/ukedetalj.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/felixdb/uker.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/felixdb/ukeverv.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/felixdb/ukevervdetalj.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/felixdb/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/felixdb/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/felixdb/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/felixdb/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/felixdb/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/felixdb/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/felixdb/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/felixdb/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/regiweb/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/regiweb/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/regiweb/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/regiweb/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/felixdb/aarsoversikt.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/felixdb/aarsoversikt.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/felixdb/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/felixdb/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/felixdb/regifant.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/felixdb/regifant.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/felixdb/verv.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/felixdb/verv.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/felixdb/vervdetalj.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/felixdb/vervdetalj.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/hjem/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/hjem/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,19 +43,34 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/regiweb/settings.py">
+        <entry file="file://$PROJECT_DIR$/felixdb/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1860">
-              <caret line="124" column="23" selection-start-line="124" selection-start-column="23" selection-end-line="124" selection-end-column="23" />
+            <state relative-caret-position="165">
+              <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/felixdb/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="77" column="30" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/hjem/index.html">
+        <entry file="file://$PROJECT_DIR$/templates/felixdb/ukevervdetalj.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+            <state relative-caret-position="135">
+              <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -74,24 +92,28 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/felixdb/vervdetalj.html" />
         <option value="$PROJECT_DIR$/static/felixdb/style.css" />
         <option value="$PROJECT_DIR$/felixdb/static/felixdb/style.css" />
-        <option value="$PROJECT_DIR$/templates/felixdb/verv.html" />
         <option value="$PROJECT_DIR$/templates/felixdb/Index.html" />
-        <option value="$PROJECT_DIR$/templates/felixdb/index.html" />
-        <option value="$PROJECT_DIR$/felixdb/urls.py" />
-        <option value="$PROJECT_DIR$/templates/felixdb/aarsoversikt.html" />
-        <option value="$PROJECT_DIR$/felixdb/models.py" />
         <option value="$PROJECT_DIR$/felixdb/admin.py" />
-        <option value="$PROJECT_DIR$/felixdb/views.py" />
-        <option value="$PROJECT_DIR$/templates/felixdb/regifant.html" />
         <option value="$PROJECT_DIR$/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/hjem/urls.py" />
         <option value="$PROJECT_DIR$/hjem/views.py" />
-        <option value="$PROJECT_DIR$/regiweb/settings.py" />
         <option value="$PROJECT_DIR$/regiweb/urls.py" />
+        <option value="$PROJECT_DIR$/regiweb/settings.py" />
+        <option value="$PROJECT_DIR$/templates/felixdb/index.html" />
+        <option value="$PROJECT_DIR$/templates/felixdb/aarsoversikt.html" />
+        <option value="$PROJECT_DIR$/templates/felixdb/verv.html" />
         <option value="$PROJECT_DIR$/templates/hjem/index.html" />
+        <option value="$PROJECT_DIR$/templates/felixdb/ukeverv.html" />
+        <option value="$PROJECT_DIR$/felixdb/models.py" />
+        <option value="$PROJECT_DIR$/templates/felixdb/uker.html" />
+        <option value="$PROJECT_DIR$/felixdb/urls.py" />
+        <option value="$PROJECT_DIR$/felixdb/views.py" />
+        <option value="$PROJECT_DIR$/templates/felixdb/ukedetalj.html" />
+        <option value="$PROJECT_DIR$/templates/felixdb/regifant.html" />
+        <option value="$PROJECT_DIR$/templates/felixdb/vervdetalj.html" />
+        <option value="$PROJECT_DIR$/templates/felixdb/ukevervdetalj.html" />
       </list>
     </option>
   </component>
@@ -105,7 +127,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -118,22 +139,11 @@
               <item name="regiweb" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="regiweb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="regiweb" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="hjem" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="regiweb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="regiweb" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="registration" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -145,21 +155,21 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/registration" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/felixdb" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/felixdb" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/felixdb" />
       <recent name="$PROJECT_DIR$/templates/registration" />
       <recent name="$PROJECT_DIR$/hjem" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/templates/felixdb" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/felixdb" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -217,23 +227,24 @@
       <workItem from="1552995510296" duration="543000" />
       <workItem from="1553190318980" duration="9052000" />
       <workItem from="1553510015944" duration="1181000" />
-      <workItem from="1553770226319" duration="1070000" />
+      <workItem from="1553770226319" duration="2783000" />
+      <workItem from="1553804920725" duration="5699000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26502000" />
+    <option name="totallyTimeSpent" value="33914000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="964" height="1042" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23406594" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23956044" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.285558" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2846154" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -242,7 +253,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32932165" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32822758" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32822758" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32897604" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -286,48 +297,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/felixdb/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/felixdb/verv.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/felixdb/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" selection-start-column="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/felixdb/vervdetalj.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/conf/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/felixdb/aarsoversikt.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -353,13 +326,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/felixdb/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="116" column="66" lean-forward="true" selection-start-line="116" selection-start-column="66" selection-end-line="116" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/felixdb/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -370,34 +336,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/felixdb/regifant.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/registration/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/felixdb/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hjem/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -418,20 +360,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/regiweb/settings.py">
+    <entry file="file://$PROJECT_DIR$/templates/registration/logout.html" />
+    <entry file="file://$PROJECT_DIR$/hjem/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1860">
-          <caret line="124" column="23" selection-start-line="124" selection-start-column="23" selection-end-line="124" selection-end-column="23" />
+        <state relative-caret-position="30">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/registration/logout.html">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/templates/felixdb/verv.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/felixdb/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/regiweb/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="17" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/felixdb/aarsoversikt.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/hjem/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+        <state relative-caret-position="300">
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/felixdb/ukeverv.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/felixdb/uker.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/felixdb/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="105" column="54" selection-start-line="105" selection-start-column="54" selection-end-line="105" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/felixdb/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/felixdb/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="77" column="30" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/felixdb/ukedetalj.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/felixdb/regifant.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="38" column="19" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/felixdb/vervdetalj.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/felixdb/ukevervdetalj.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
         </state>
       </provider>
     </entry>

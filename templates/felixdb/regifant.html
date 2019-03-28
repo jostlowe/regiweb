@@ -20,8 +20,8 @@
         </tr>
         {% for vervperiode in vervperiodeliste %}
             <tr>
-                <td><a href={% url 'vervdetalj' vervperiode.verv.pk%}>{{ vervperiode.verv }}</a></td>
-                <td><a href={% url 'aarsoversikt' vervperiode.aar %}>{{ vervperiode.aar }}</a></td>
+                <td><a href={% url 'felixdb:vervdetalj' vervperiode.verv.pk%}>{{ vervperiode.verv }}</a></td>
+                <td><a href={% url 'felixdb:aarsoversikt' vervperiode.aar %}>{{ vervperiode.aar }}</a></td>
             </tr>
         {% endfor %}
     </table>
@@ -35,8 +35,16 @@
         </tr>
         {% for ukevervperiode in ukevervperiodeliste %}
             <tr>
-                <td><a>{{ ukevervperiode.ukeverv }}</a></td>
-                <td><a>{{ ukevervperiode.uke }} ({{ ukevervperiode.uke.aar }})</a></td>
+                <td>
+                    <a href={% url 'felixdb:ukevervdetalj' ukevervperiode.ukeverv.id %}>
+                        {{ ukevervperiode.ukeverv }}
+                    </a>
+                </td>
+                <td>
+                    <a href={% url 'felixdb:ukedetalj' ukevervperiode.uke.aar %}>
+                        {{ ukevervperiode.uke }}
+                    </a>
+                </td>
             </tr>
         {% endfor %}
     </table>

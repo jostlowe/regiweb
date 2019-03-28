@@ -9,5 +9,24 @@
     <p>
         {{ verv.kort_beskrivelse }}
     </p>
+
+    <h3>Vervinnehavere</h3>
+    <table>
+        <tr>
+            <th>År</th>
+            <th>Regifant</th>
+        </tr>
+        {% for vervperiode in vervperioder %}
+            <tr>
+                <td><a href={% url 'felixdb:aarsoversikt' vervperiode.aar %}>
+                    {{ vervperiode.aar }}
+                </a></td>
+                <td><a href={% url 'felixdb:regifant' vervperiode.regifant.id %}>
+                    {{ vervperiode.regifant }}
+                </a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
 </body>
 </html>

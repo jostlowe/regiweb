@@ -97,7 +97,7 @@ class Uke(models.Model):
         verbose_name_plural = "Uker"
 
     def __str__(self):
-        return self.ukenavn
+        return self.ukenavn + " (" + str(self.aar) + ")"
 
 
 class Ukeverv(models.Model):

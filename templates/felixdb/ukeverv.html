@@ -14,14 +14,13 @@
 
 
 <body>
-    <div class="page-header">
-        FelixDB
-    </div>
+    <h2> UKEverv </h2>
+
     <ul>
-        {% for verv in vervliste %}
+        {% for ukeverv in ukevervliste %}
             <li>
-                <a href="{% url 'felixdb:vervdetalj' verv.pk %}">
-                    {{ verv.navn }}
+                <a href="">
+                    {{ ukeverv.navn }}
                 </a>
             </li>
         {% endfor %}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verv</title>
+</head>
+<body>
+    <h1> {{ uke }}</h1>
+
+    <h3>Vervinnehavere</h3>
+    <table>
+        <tr>
+            <th>Ukeverv</th>
+            <th>Regifant</th>
+        </tr>
+        {% for ukevervperiode in ukevervperioder %}
+            <tr>
+                <td><a href="{% url 'felixdb:ukevervdetalj' ukevervperiode.ukeverv.id %}">
+                    {{ ukevervperiode.ukeverv }}
+                </a></td>
+                <td><a href="{% url 'felixdb:regifant' ukevervperiode.regifant.id %}">
+                    {{ ukevervperiode.regifant }}
+                </a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

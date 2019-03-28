@@ -4,18 +4,6 @@ from django.template import loader
 from .models import Verv, Regifant, Vervperiode, Uke, Ukeverv, Ukevervperiode
 
 
-def verv(request):
-    vervliste = Verv.objects.order_by('navn')
-    context = {'vervliste': vervliste}
-    return render(request, 'felixdb/verv.html', context)
-
-
-def vervdetalj(request, verv_id):
-    verv = Verv.objects.get(pk=verv_id)
-    context = {'verv': verv}
-    return render(request, 'felixdb/vervdetalj.html', context)
-
-
 def index(request):
     regifanter = Regifant.objects.all()
     context = {
@@ -36,6 +24,40 @@ def regifant(request, regifant_id):
     return render(request, 'felixdb/regifant.html', context)
 
 
+def verv(request):
+    vervliste = Verv.objects.order_by('navn')
+    context = {'vervliste': vervliste}
+    return render(request, 'felixdb/verv.html', context)
+
+
+def vervdetalj(request, verv_id):
+    verv = Verv.objects.get(pk=verv_id)
+    vervperioder = Vervperiode.objects.filter(verv=verv)
+    context = {
+        'verv': verv,
+        'vervperioder': vervperioder,
+    }
+    return render(request, 'felixdb/vervdetalj.html', context)
+
+
+def ukeverv(request):
+    ukevervliste = Ukeverv.objects.all()
+    context = {
+        'ukevervliste': ukevervliste
+    }
+    return render(request, 'felixdb/ukeverv.html', context)
+
+
+def ukevervdetalj(request, ukeverv_id):
+    ukeverv = Ukeverv.objects.get(pk=ukeverv_id)
+    ukevervperioder = Ukevervperiode.objects.filter(ukeverv=ukeverv)
+    context = {
+        'ukeverv': ukeverv,
+        'ukevervperioder': ukevervperioder,
+    }
+    return render(request, 'felixdb/ukevervdetalj.html', context)
+
+
 def aarsoversikt(request, aar):
     vervperiodeliste = Vervperiode.objects.filter(aar=aar).order_by('-aar')
     context={
@@ -43,5 +65,23 @@ def aarsoversikt(request, aar):
         "vervperiodeliste": vervperiodeliste
     }
     return render(request, 'felixdb/aarsoversikt.html', context)
+
+
+def uker(request):
+    uker = Uke.objects.all().order_by('-aar')
+    context = {
+        'uker': uker
+    }
+    return render(request, 'felixdb/uker.html', context)
+
+
+def ukedetalj(request, ukeaar):
+    uke = Uke.objects.get(aar=ukeaar)
+    ukevervperioder = Ukevervperiode.objects.filter(uke=uke)
+    context = {
+        'uke': uke,
+        'ukevervperioder': ukevervperioder
+    }
+    return render(request, 'felixdb/ukedetalj.html', context)
 
 # Create your views here.

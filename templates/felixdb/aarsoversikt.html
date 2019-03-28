@@ -14,8 +14,8 @@
         </tr>
         {% for vervperiode in vervperiodeliste %}
             <tr>
-                <td><a href={% url 'vervdetalj' vervperiode.verv.pk%}>{{ vervperiode.verv }}</a></td>
-                <td><a href={% url 'regifant' vervperiode.regifant.pk%}>{{ vervperiode.regifant.navn }}</a></td>
+                <td><a href={% url 'felixdb:vervdetalj' vervperiode.verv.pk%}>{{ vervperiode.verv }}</a></td>
+                <td><a href={% url 'felixdb:regifant' vervperiode.regifant.pk%}>{{ vervperiode.regifant.navn }}</a></td>
             </tr>
         {% endfor %}
     </table>

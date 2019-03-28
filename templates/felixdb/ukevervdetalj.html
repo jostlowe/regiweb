@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verv</title>
+</head>
+<body>
+    <h1> {{ ukeverv.navn }}</h1>
+    <p>
+        {{ ukeverv.kort_beskrivelse }}
+    </p>
+
+    <h3>Vervinnehavere</h3>
+    <table>
+        <tr>
+            <th>Uke</th>
+            <th>Regifant</th>
+        </tr>
+        {% for ukevervperiode in ukevervperioder %}
+            <tr>
+                <td><a href={% url 'felixdb:ukedetalj' ukevervperiode.uke.aar %}>
+                    {{ ukevervperiode.uke }}
+                </a></td>
+                <td><a href={% url 'felixdb:regifant' ukevervperiode.regifant.id %}>
+                    {{ ukevervperiode.regifant }}
+                </a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

@@ -11,7 +11,7 @@
 <ul>
     {% for regifant in regifanter %}
         <li>
-            <a href="{% url 'regifant' regifant.pk %}">
+            <a href="{% url 'felixdb:regifant' regifant.pk %}">
                 {{ regifant.navn }}
             </a>
         </li>
