@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from .models import Verv, Regifant, Vervperiode
+from .models import Verv, Regifant, Vervperiode, Uke, Ukeverv, Ukevervperiode
 
 
 def verv(request):
@@ -27,9 +27,11 @@ def index(request):
 def regifant(request, regifant_id):
     regifant = Regifant.objects.get(pk=regifant_id)
     vervperiodeliste = Vervperiode.objects.filter(regifant=regifant).order_by('-aar')
+    ukevervperiodeliste = Ukevervperiode.objects.filter(regifant=regifant)
     context={
         "regifant": regifant,
-        "vervperiodeliste": vervperiodeliste
+        "vervperiodeliste": vervperiodeliste,
+        "ukevervperiodeliste": ukevervperiodeliste
     }
     return render(request, 'felixdb/regifant.html', context)
 

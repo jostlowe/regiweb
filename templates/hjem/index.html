@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hjem</title>
+</head>
+<body>
+    <h2> velkommen til Regi3.0</h2>
+
+    {% if user.is_authenticated %}
+        <p> du er logget in som {{ user.username }}</p>
+        <p><a href="{% url 'logout' %}">logg ut</a> </p>
+    {% else %}
+        <p> Du er ikke logget inn</p>
+    {% endif %}
+</body>
+</html>

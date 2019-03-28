@@ -100,3 +100,26 @@ class Uke(models.Model):
         return self.ukenavn
 
 
+class Ukeverv(models.Model):
+
+    navn = models.CharField(max_length=100)
+    kort_beskrivelse = models.CharField(max_length=500)
+
+    def __str__(self):
+        return self.navn
+
+    class Meta:
+        verbose_name_plural = "Ukeverv"
+
+
+class Ukevervperiode(models.Model):
+    ukeverv = models.ForeignKey(Ukeverv, on_delete=models.CASCADE)
+    regifant = models.ForeignKey(Regifant, on_delete=models.CASCADE)
+    uke = models.ForeignKey(Uke, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name_plural = "Ukevervperioder"
+
+    def __str__(self):
+        return "%s - %s (%s)" % (self.regifant.navn(), self.ukeverv.navn, self.uke)
+

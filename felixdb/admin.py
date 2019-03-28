@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Verv, Regifant, Vervperiode, Uke
+from .models import Verv, Regifant, Vervperiode, Uke, Ukeverv, Ukevervperiode
 
 
 
@@ -18,6 +18,8 @@ class UkeAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Regifant, RegifantAdmin)
-admin.site.register(Uke, UkeAdmin)
 admin.site.register(Verv)
 admin.site.register(Vervperiode)
+admin.site.register(Uke, UkeAdmin)
+admin.site.register(Ukeverv)
+admin.site.register(Ukevervperiode)

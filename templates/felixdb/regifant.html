@@ -5,10 +5,13 @@
     <title>{{ regifant.navn }}</title>
 </head>
 <body>
+
     <h2>{{ regifant.navn }}</h2>
     <p>
         Info om denne regifanten
     </p>
+
+
     <h3>verv</h3>
     <table>
         <tr>
@@ -19,6 +22,21 @@
             <tr>
                 <td><a href={% url 'vervdetalj' vervperiode.verv.pk%}>{{ vervperiode.verv }}</a></td>
                 <td><a href={% url 'aarsoversikt' vervperiode.aar %}>{{ vervperiode.aar }}</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+
+    <h3>Ukeverv</h3>
+    <table>
+        <tr>
+            <th>UKEverv</th>
+            <th>UKE</th>
+        </tr>
+        {% for ukevervperiode in ukevervperiodeliste %}
+            <tr>
+                <td><a>{{ ukevervperiode.ukeverv }}</a></td>
+                <td><a>{{ ukevervperiode.uke }} ({{ ukevervperiode.uke.aar }})</a></td>
             </tr>
         {% endfor %}
     </table>

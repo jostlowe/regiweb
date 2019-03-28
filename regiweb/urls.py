@@ -19,4 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('felixdb/', include('felixdb.urls')),
+    path('brukere/', include('django.contrib.auth.urls')),
+    path('', include('hjem.urls')),
 ]
