@@ -8,9 +8,10 @@ class Regifant(models.Model):
     etternavn = models.CharField(max_length=100)
     kallenavn = models.CharField(max_length=100, blank=True)
 
+    # Regi-info
+    er_aktiv = models.BooleanField(default=True)
+
     # Tid og datoer
-    #aar_valg = [aar for aar in range(1850, timezone.now().year+1)]
-    aar_valg = [1,2,3,4]
     foedt = models.IntegerField(blank=True, null=True)
     doed = models.IntegerField(blank=True, null=True)
     tatt_opp = models.IntegerField(blank=True, null=True)

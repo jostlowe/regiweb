@@ -11,6 +11,7 @@ def index(request):
     return render(request, 'felixdb/index.html', context)
 
 
+@login_required
 def regifant(request, regifant_id):
     regifant = Regifant.objects.get(pk=regifant_id)
     vervperiodeliste = Vervperiode.objects.filter(regifant=regifant).order_by('-aar')
@@ -23,12 +24,14 @@ def regifant(request, regifant_id):
     return render(request, 'felixdb/regifant.html', context)
 
 
+@login_required
 def verv(request):
     vervliste = Verv.objects.order_by('navn')
     context = {'vervliste': vervliste}
     return render(request, 'felixdb/verv.html', context)
 
 
+@login_required
 def vervdetalj(request, verv_id):
     verv = Verv.objects.get(pk=verv_id)
     vervperioder = Vervperiode.objects.filter(verv=verv)
@@ -39,6 +42,7 @@ def vervdetalj(request, verv_id):
     return render(request, 'felixdb/vervdetalj.html', context)
 
 
+@login_required
 def ukeverv(request):
     ukevervliste = Ukeverv.objects.all()
     context = {
@@ -47,6 +51,7 @@ def ukeverv(request):
     return render(request, 'felixdb/ukeverv.html', context)
 
 
+@login_required
 def ukevervdetalj(request, ukeverv_id):
     ukeverv = Ukeverv.objects.get(pk=ukeverv_id)
     ukevervperioder = Ukevervperiode.objects.filter(ukeverv=ukeverv)
@@ -57,6 +62,7 @@ def ukevervdetalj(request, ukeverv_id):
     return render(request, 'felixdb/ukevervdetalj.html', context)
 
 
+@login_required
 def aarsoversikt(request, aar):
     vervperiodeliste = Vervperiode.objects.filter(aar=aar).order_by('-aar')
     context={
@@ -66,6 +72,7 @@ def aarsoversikt(request, aar):
     return render(request, 'felixdb/aarsoversikt.html', context)
 
 
+@login_required
 def uker(request):
     uker = Uke.objects.all().order_by('-aar')
     context = {
@@ -74,6 +81,7 @@ def uker(request):
     return render(request, 'felixdb/uker.html', context)
 
 
+@login_required
 def ukedetalj(request, ukeaar):
     uke = Uke.objects.get(aar=ukeaar)
     ukevervperioder = Ukevervperiode.objects.filter(uke=uke)

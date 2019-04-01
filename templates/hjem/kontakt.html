@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kontakt</title>
+</head>
+<body>
+    <h3>Kontaktinfo til Regis vervinnehavere </h3>
+    <h3>kontaktinfo til regis aktive</h3>
+    <ul>
+        {% for regifant in aktive_regifanter %}
+            <li> {{ regifant.navn }} </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

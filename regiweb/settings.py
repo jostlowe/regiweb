@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'felixdb.apps.FelixdbConfig',
     'hjem.apps.HjemConfig',
+    'festkassen.apps.FestkassenConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
