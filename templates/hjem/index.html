@@ -1,26 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Hjem</title>
-</head>
-<body>
-    <h2> velkommen til Regi3.0</h2>
 
-    {% if user.is_authenticated %}
-        <p> du er logget in som {{ user.username }}</p>
-        <p><a href="{% url 'logout' %}">logg ut</a> </p>
-    {% else %}
-        <p> Du er ikke logget inn</p>
-        <p> <a href="{% url 'login' %}"> logg inn </a></p>
-    {% endif %}
+{% extends 'generisk/ekstern_base.html' %}
+
+{% load static %}
 
 
-    <ul>
-        <li><a href="{% url 'hjem:intern' %}"> Internsider </a> </li>
-        <li><a href="{% url 'hjem:kontakt' %}"> kontaktinformasjon </a> </li>
-        <li><a href="{% url 'hjem:techspecs' %}"> TechSpecs </a> </li>
-        <li><a href="{% url 'hjem:om' %}"> Om Regi </a> </li>
-    </ul>
-</body>
+{% block content %}
+    <h2>Regi v3.0</h2>
+{% endblock %}
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hjem</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'generisk/ekstern_base.css' %}">
+</head>
+
+<body>
+<div class="wrapper">
+    <header class="header">
+        <a href="{% url 'hjem:index' %}">
+            <img class ="logo" src="{% static 'generisk/regilogo.png' %}">
+        </a>
+
+        <nav class="nav">
+            <div></div>
+            <a class="link" href="{% url 'hjem:kontakt' %}">kontakt</a>
+            <a class="link" href="{% url 'hjem:techspecs' %}">techspecs</a>
+            <a class="link" href="{% url 'hjem:om' %}">om oss</a>
+            <a class="link" href="{% url 'hjem:intern' %}">intern</a>
+        </nav>
+    </header>
+    <div class="main">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div class="footer">
+    </div>
+</div>
+</body>
+</html>
