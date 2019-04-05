@@ -41,7 +41,7 @@ class Regifant(models.Model):
     mf58 = models.BooleanField()
 
     # Annet
-    #bilde = models.ImageField()
+    bilde = models.ImageField(blank=True, null=True)
 
     def navn(self):
         return self.fornavn + " " + self.etternavn

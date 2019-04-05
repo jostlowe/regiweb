@@ -34,7 +34,7 @@ class Festkassekonto(models.Model):
 
     def saldo(self):
         transaksjoner = Transaksjon.objects.filter(festkassekonto=self)
-        return sum([transaksjon.betegnet_sum() for transaksjon in transaksjoner])
+        return sum([0 for transaksjon in transaksjoner])
 
 
     class Meta:
@@ -47,36 +47,6 @@ class Festkassekonto(models.Model):
             return "%s (%s)" % (bruker, fullt_navn)
         else:
             return "Uassosiert festkassekonto"
-
-
-class Transaksjonstype(models.Model):
-    navn = models.CharField(max_length=100)
-    beskrivelse = models.CharField(max_length=1000)
-    er_additiv = models.BooleanField(
-        default=False,
-        help_text="""
-            Dersom dette feltet er krysset av, 
-            vil transaksjoner av denne typen LEGGE TIL
-            penger på brukerens festkassekonto. Dersom feltet
-            IKKE er krysset vil denne typen transaksjon TREKKE FRA
-            penger fra brukerens festkassekonto
-            """,
-    )
-    maa_godkjennes = models.BooleanField(
-        default=False,
-        verbose_name="Må godkjennes",
-        help_text="""
-            Kryss av dersom denne typen transaksjon må godkjennes
-            av festkasse før den skal registreres i festkassen.
-            eksempelvis, så burde "innskudd" og "utlegg" godkjennes av festkasse
-        """,
-    )
-
-    class Meta:
-        verbose_name_plural = "Transaksjonstyper"
-
-    def __str__(self):
-        return self.navn
 
 
 class Bar(models.Model):
@@ -96,23 +66,37 @@ class Bar(models.Model):
             return "Ukjent Bar"
 
 
-class Transaksjon(models.Model):
-    transaksjonstype = models.ForeignKey(Transaksjonstype, on_delete=models.CASCADE)
-    festkassekonto = models.ForeignKey(Festkassekonto, on_delete=models.CASCADE)
-    sum = models.DecimalField(decimal_places=2, max_digits=7)
-    tidsstempel = models.DateTimeField(default=timezone.now)
-    bar = models.ForeignKey(Bar, on_delete=models.CASCADE, null=True, blank=True)
+class Vare(models.Model):
+    navn = models.CharField(max_length=50)
+    beskrivelse = models.CharField(max_length=200, null=True, blank=True)
 
-    def betegnet_sum(self):
-        if self.transaksjonstype.er_additiv:
-            return self.sum
-        else:
-            return -self.sum
+    class Meta:
+        verbose_name_plural = "Varer"
+
+    def __str__(self):
+        return self.navn
+
+
+class Varepris(models.Model):
+    vare = models.ForeignKey(Vare, on_delete=models.CASCADE)
+    pris = models.DecimalField(decimal_places=2, max_digits=7)
+    gyldig_fra = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        verbose_name_plural = "Varepriser"
+
+    def __str__(self):
+        return "%s (%s)" % (self.vare.navn, str(self.pris))
+
+
+class Transaksjon(models.Model):
+    festkassekonto = models.ForeignKey(Festkassekonto, on_delete=models.CASCADE)
+    tidsstempel = models.DateTimeField(default=timezone.now)
 
     class Meta:
         verbose_name_plural = "Transaksjoner"
 
     def __str__(self):
-        return "%s (%s)" % (self.festkassekonto.regiweb_bruker.username, self.transaksjonstype)
+        return "%08d" % self.pk
 
 
