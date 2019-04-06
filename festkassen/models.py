@@ -69,6 +69,15 @@ class Bar(models.Model):
 class Vare(models.Model):
     navn = models.CharField(max_length=50)
     beskrivelse = models.CharField(max_length=200, null=True, blank=True)
+    standardpris = models.DecimalField(decimal_places=2, max_digits=7, default=0)
+    er_additiv = models.BooleanField(
+        default=False,
+        verbose_name="Er additiv",
+        help_text="""Hvis denne boksen er krysset av 
+            vil prisen av varen LEGGES TIL festkassekontoens saldo.
+            Dersom den ikke er krysset av vil prisen TREKKES FRA
+            festkassekontoens saldo"""
+    )
 
     class Meta:
         verbose_name_plural = "Varer"
@@ -77,21 +86,22 @@ class Vare(models.Model):
         return self.navn
 
 
-class Varepris(models.Model):
-    vare = models.ForeignKey(Vare, on_delete=models.CASCADE)
-    pris = models.DecimalField(decimal_places=2, max_digits=7)
-    gyldig_fra = models.DateTimeField(default=timezone.now)
-
-    class Meta:
-        verbose_name_plural = "Varepriser"
-
-    def __str__(self):
-        return "%s (%s)" % (self.vare.navn, str(self.pris))
-
-
 class Transaksjon(models.Model):
     festkassekonto = models.ForeignKey(Festkassekonto, on_delete=models.CASCADE)
     tidsstempel = models.DateTimeField(default=timezone.now)
+    antall = models.PositiveIntegerField(default=0)
+    stykkpris = models.DecimalField(decimal_places=2, max_digits=7, default=0)
+    vare = models.ForeignKey(Vare, on_delete=models.CASCADE, null=True, blank=True)
+
+    godkjent = models.BooleanField(
+        default=False,
+        verbose_name="Godkjent av festkasse",
+        help_text="""Krysses av for å godkjenne varer, som f.eks. 
+            innskudd på festkassen eller utlegg"""
+    )
+
+    def sum(self):
+        return self.stykkpris * self.antall
 
     class Meta:
         verbose_name_plural = "Transaksjoner"
