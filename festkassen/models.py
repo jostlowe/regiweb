@@ -152,6 +152,7 @@ class BSFRegning(models.Model):
 
     class Meta:
         verbose_name_plural = "BSF-regninger"
+        verbose_name = "BSF-regning"
 
     def __str__(self):
         return "%s, %s (%s)" % (self.festkassekonto, self.bsf, self.bar)

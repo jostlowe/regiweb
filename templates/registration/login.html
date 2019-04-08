@@ -8,24 +8,25 @@
 </head>
 
 <body>
-    <img src="{% static 'login/felixcrossbones.png' %}">
-    <p>
-        skal du inn her du? Da må du logge inn først!
-    </p>
-    <form method="post">
-        {% csrf_token %}
-        {% if next %}
-            <input type="hidden" name="next" value="{{ next }}" />
-        {% endif %}
+    <div class="login-container">
+        <img src="{% static 'login/felixcrossbones.png' %}">
         <p>
-            <input type="text" id="username" name="username" placeholder="Brukernavn">
+            skal du inn her du? Da må du logge inn først!
         </p>
-        <p>
-            <input type="password" id="password" name="password" placeholder="Passord">
-        </p>
+        <form method="post">
+            {% csrf_token %}
+            {% if next %}
+                <input type="hidden" name="next" value="{{ next }}" />
+            {% endif %}
+            <p>
+                <input type="text" id="username" name="username" placeholder="Brukernavn">
+            </p>
+            <p>
+                <input type="password" id="password" name="password" placeholder="Passord">
+            </p>
 
-        <button type="submit">Login</button>
-    </form>
-
+            <button type="submit">Login</button>
+        </form>
+    </div>
 </body>
 </html>
