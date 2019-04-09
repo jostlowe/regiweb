@@ -32,11 +32,6 @@ class Festkassekonto(models.Model):
         help_text="Markerer om festkassebrukeren er aktiv. Kryss av her heller enn å slette brukeren"
     )
 
-    def saldo(self):
-        transaksjoner = Transaksjon.objects.filter(festkassekonto=self)
-        return sum([0 for transaksjon in transaksjoner])
-
-
     class Meta:
         verbose_name_plural = "Festkassekontoer"
 
@@ -109,30 +104,6 @@ class Krysseliste(models.Model):
         return "%s (%s)" % (self.type , str(self.dato.date()))
 
 
-class Transaksjon(models.Model):
-    festkassekonto = models.ForeignKey(Festkassekonto, on_delete=models.CASCADE)
-    tidsstempel = models.DateTimeField(default=timezone.now)
-    vare = models.ForeignKey(Vare, on_delete=models.CASCADE, null=True, blank=True)
-    antall = models.PositiveIntegerField(default=0)
-    stykkpris = models.DecimalField(decimal_places=2, max_digits=7, default=0)
-    godkjent = models.BooleanField(
-        default=False,
-        verbose_name="Godkjent av festkasse",
-        help_text="""Krysses av for å godkjenne varer, som f.eks. 
-            innskudd på festkassen eller utlegg"""
-    )
-    krysseliste = models.ForeignKey(Krysseliste, null=True, blank=True, on_delete=models.CASCADE)
-
-    def sum(self):
-        return self.stykkpris * self.antall
-
-    class Meta:
-        verbose_name_plural = "Transaksjoner"
-
-    def __str__(self):
-        return "%08d" % self.pk
-
-
 class BSF(models.Model):
     beskrivelse = models.CharField(max_length=200, blank=True, null=True)
     dato = models.DateField(default=timezone.now)
@@ -142,20 +113,6 @@ class BSF(models.Model):
 
     def __str__(self):
         return str(self.beskrivelse)
-
-
-class BSFRegning(models.Model):
-    bar = models.ForeignKey(Bar, on_delete=models.CASCADE)
-    bsf = models.ForeignKey(BSF, on_delete=models.CASCADE)
-    festkassekonto = models.ForeignKey(Festkassekonto, on_delete=models.CASCADE)
-    sum = models.DecimalField(decimal_places=2, max_digits=7, default=0)
-
-    class Meta:
-        verbose_name_plural = "BSF-regninger"
-        verbose_name = "BSF-regning"
-
-    def __str__(self):
-        return "%s, %s (%s)" % (self.festkassekonto, self.bsf, self.bar)
 
 
 class Eksternkrysseliste(models.Model):

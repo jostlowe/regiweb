@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Festkassekonto, Transaksjon, Vare
+from .models import Festkassekonto, Vare
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -17,19 +17,4 @@ def innskudd(request):
         'festkassekonto': festkassekonto
     }
     return render(request, 'festkassen/innskudd.html', context)
-
-
-@login_required
-def registrer_innskudd(request, ):
-    vare = Vare.objects.get(navn='Innskudd')
-    festkassekonto = get_object_or_404(Festkassekonto, regiweb_bruker=request.user)
-    transaksjon = Transaksjon(
-        vare=vare,
-        stykkpris=int(request.POST['sum']),
-        antall=1,
-        festkassekonto=festkassekonto,
-        godkjent=False
-    )
-    transaksjon.save()
-    return HttpResponse("registret %s på %s" % (request.POST['sum'], request.user))
 
