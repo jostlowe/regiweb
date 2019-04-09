@@ -83,14 +83,14 @@ class Krysselistetype(models.Model):
 
 class Krysseliste(models.Model):
     dato = models.DateTimeField(default=timezone.now)
-    opprettet_av = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
-    type = models.ForeignKey(Krysselistetype, on_delete=models.CASCADE, null=True, blank=True)
+    opprettet_av = models.ForeignKey(User, on_delete=models.CASCADE)
+    type = models.ForeignKey(Krysselistetype, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name_plural = "Krysselister"
 
     def __str__(self):
-        return "%s (%s)" % (self.type , str(self.dato.date()))
+        return "%s (%s)" % (self.type , str(self.dato))
 
 
 # Modeller for BSF
@@ -182,6 +182,9 @@ class Transaksjon(models.Model):
     class Meta:
         abstract = True
 
+    def __str__(self):
+        return "%08d" % self.pk
+
 
 class Kryss(Transaksjon):
     vare = models.ForeignKey(Vare, on_delete=models.CASCADE)
@@ -192,6 +195,9 @@ class Kryss(Transaksjon):
     def sum(self):
         return self.antall*self.stykkpris
 
+    class Meta:
+        verbose_name_plural = "Kryss"
+
 
 class BSFregning(Transaksjon):
     bsf = models.ForeignKey(BSF, on_delete=models.CASCADE)
@@ -200,6 +206,10 @@ class BSFregning(Transaksjon):
 
     def sum(self):
         return self.belop
+
+    class Meta:
+        verbose_name_plural = "BSF-regninger"
+        verbose_name = "BSF-regning"
 
 
 class Innskudd(Transaksjon):
@@ -210,3 +220,5 @@ class Innskudd(Transaksjon):
     def sum(self):
         return self.belop
 
+    class Meta:
+        verbose_name_plural = "Innskudd"
