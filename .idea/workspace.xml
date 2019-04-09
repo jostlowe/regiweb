@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c6ff421-503d-41ed-b7fd-524774f023cd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/festkassen/ingen_festkassekonto.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/festkassen/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/festkassen/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/festkassen/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/festkassen/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/festkassen/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/festkassen/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/festkassen/innskudd.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/festkassen/innskudd.html" afterDir="false" />
-    </list>
+    <list default="true" id="4c6ff421-503d-41ed-b7fd-524774f023cd" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/festkassen/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+            <state relative-caret-position="210">
+              <caret line="39" column="75" selection-start-line="39" selection-start-column="75" selection-end-line="39" selection-end-column="75" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -265,8 +257,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django server.regiweb" />
       <item itemvalue="Django server.regiweb ekstern" />
+      <item itemvalue="Django server.regiweb" />
     </list>
   </component>
   <component name="SpellCheckerSettings" BundledDictionaries="1" BundledDictionary0="english.dic" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="project-level" UseSingleDictionary="true" />
@@ -298,7 +290,7 @@
       <workItem from="1554650002077" duration="1873000" />
       <workItem from="1554668213388" duration="3198000" />
       <workItem from="1554715080907" duration="13000" />
-      <workItem from="1554834446175" duration="4782000" />
+      <workItem from="1554834446175" duration="5037000" />
     </task>
     <task id="LOCAL-00001" summary="lagt til fronuftige modeller for transaksjoner">
       <created>1554836881333</created>
@@ -307,11 +299,18 @@
       <option name="project" value="LOCAL" />
       <updated>1554836881333</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Innskudd fungerer">
+      <created>1554839420348</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1554839420348</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91890000" />
+    <option name="totallyTimeSpent" value="92145000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="964" height="1046" extended-state="0" />
@@ -368,7 +367,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="lagt til fronuftige modeller for transaksjoner" />
-    <option name="LAST_COMMIT_MESSAGE" value="lagt til fronuftige modeller for transaksjoner" />
+    <MESSAGE value="Innskudd fungerer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Innskudd fungerer" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/conf/__init__.py" />
@@ -665,8 +665,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/festkassen/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+        <state relative-caret-position="210">
+          <caret line="39" column="75" selection-start-line="39" selection-start-column="75" selection-end-line="39" selection-end-column="75" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
