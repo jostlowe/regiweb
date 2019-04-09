@@ -8,6 +8,7 @@ from .models import BSF, Eksternkrysseliste, EksternDranker, EksternTransaksjon
 class FestkassekontoAdmin(admin.ModelAdmin):
     list_display = ('__str__', 'kontotype',  'aktiv', 'pk')
 
+
 class VareAdmin(admin.ModelAdmin):
     list_display = ('__str__', 'standardpris', 'er_additiv', 'beskrivelse', )
 
