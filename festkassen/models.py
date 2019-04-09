@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 
+# Festkasserelaterte ting
+
+
 class Festkassekontotype(models.Model):
     navn = models.CharField(max_length=100)
     svartegrense = models.DecimalField(decimal_places=2, max_digits=7)
@@ -32,11 +35,6 @@ class Festkassekonto(models.Model):
         help_text="Markerer om festkassebrukeren er aktiv. Kryss av her heller enn å slette brukeren"
     )
 
-    def saldo(self):
-        transaksjoner = Transaksjon.objects.filter(festkassekonto=self)
-        return sum([0 for transaksjon in transaksjoner])
-
-
     class Meta:
         verbose_name_plural = "Festkassekontoer"
 
@@ -47,23 +45,6 @@ class Festkassekonto(models.Model):
             return "%s (%s)" % (bruker, fullt_navn)
         else:
             return "Uassosiert festkassekonto"
-
-
-class Bar(models.Model):
-    gjengnavn = models.CharField(max_length=100)
-    barnavn = models.CharField(max_length=100, blank=True, null=True)
-    aktiv = models.BooleanField(default=True)
-
-    class Meta:
-        verbose_name_plural = "Barer"
-
-    def __str__(self):
-        if self.barnavn:
-            return "%s (%s)" % (self.gjengnavn, self.barnavn)
-        elif self.gjengnavn:
-            return self.gjengnavn
-        else:
-            return "Ukjent Bar"
 
 
 class Vare(models.Model):
@@ -86,6 +67,9 @@ class Vare(models.Model):
         return self.navn
 
 
+# Modeller for interne krysselister
+
+
 class Krysselistetype(models.Model):
     navn = models.CharField(max_length=100)
     beskrivelse = models.CharField(max_length=200, blank=True, null=True)
@@ -99,38 +83,34 @@ class Krysselistetype(models.Model):
 
 class Krysseliste(models.Model):
     dato = models.DateTimeField(default=timezone.now)
-    opprettet_av = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
-    type = models.ForeignKey(Krysselistetype, on_delete=models.CASCADE, null=True, blank=True)
+    opprettet_av = models.ForeignKey(User, on_delete=models.CASCADE)
+    type = models.ForeignKey(Krysselistetype, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name_plural = "Krysselister"
 
     def __str__(self):
-        return "%s (%s)" % (self.type , str(self.dato.date()))
+        return "%s (%s)" % (self.type , str(self.dato))
 
 
-class Transaksjon(models.Model):
-    festkassekonto = models.ForeignKey(Festkassekonto, on_delete=models.CASCADE)
-    tidsstempel = models.DateTimeField(default=timezone.now)
-    vare = models.ForeignKey(Vare, on_delete=models.CASCADE, null=True, blank=True)
-    antall = models.PositiveIntegerField(default=0)
-    stykkpris = models.DecimalField(decimal_places=2, max_digits=7, default=0)
-    godkjent = models.BooleanField(
-        default=False,
-        verbose_name="Godkjent av festkasse",
-        help_text="""Krysses av for å godkjenne varer, som f.eks. 
-            innskudd på festkassen eller utlegg"""
-    )
-    krysseliste = models.ForeignKey(Krysseliste, null=True, blank=True, on_delete=models.CASCADE)
+# Modeller for BSF
 
-    def sum(self):
-        return self.stykkpris * self.antall
+
+class Bar(models.Model):
+    gjengnavn = models.CharField(max_length=100)
+    barnavn = models.CharField(max_length=100, blank=True, null=True)
+    aktiv = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name_plural = "Transaksjoner"
+        verbose_name_plural = "Barer"
 
     def __str__(self):
-        return "%08d" % self.pk
+        if self.barnavn:
+            return "%s (%s)" % (self.gjengnavn, self.barnavn)
+        elif self.gjengnavn:
+            return self.gjengnavn
+        else:
+            return "Ukjent Bar"
 
 
 class BSF(models.Model):
@@ -144,18 +124,7 @@ class BSF(models.Model):
         return str(self.beskrivelse)
 
 
-class BSFRegning(models.Model):
-    bar = models.ForeignKey(Bar, on_delete=models.CASCADE)
-    bsf = models.ForeignKey(BSF, on_delete=models.CASCADE)
-    festkassekonto = models.ForeignKey(Festkassekonto, on_delete=models.CASCADE)
-    sum = models.DecimalField(decimal_places=2, max_digits=7, default=0)
-
-    class Meta:
-        verbose_name_plural = "BSF-regninger"
-        verbose_name = "BSF-regning"
-
-    def __str__(self):
-        return "%s, %s (%s)" % (self.festkassekonto, self.bsf, self.bar)
+# Modeller for ekstern kryssing på Regi-hybel
 
 
 class Eksternkrysseliste(models.Model):
@@ -199,3 +168,57 @@ class EksternTransaksjon(models.Model):
     def __str__(self):
         return "%08d" % self.pk
 
+
+# Transasksjonsmodeller
+
+class Transaksjon(models.Model):
+    tidsstempel = models.DateTimeField(default=timezone.now)
+    festkassekonto = models.ForeignKey(Festkassekonto, on_delete=models.CASCADE)
+    kommentar = models.CharField(max_length=200, blank=True, null=True)
+
+    def sum(self):
+        raise NotImplementedError
+
+    class Meta:
+        abstract = True
+
+    def __str__(self):
+        return "%08d" % self.pk
+
+
+class Kryss(Transaksjon):
+    vare = models.ForeignKey(Vare, on_delete=models.CASCADE)
+    antall = models.PositiveIntegerField()
+    stykkpris = models.DecimalField(max_digits=9, decimal_places=2, default=0)
+    krysseliste = models.ForeignKey(Krysseliste, on_delete=models.CASCADE)
+
+    def sum(self):
+        return self.antall*self.stykkpris
+
+    class Meta:
+        verbose_name_plural = "Kryss"
+
+
+class BSFregning(Transaksjon):
+    bsf = models.ForeignKey(BSF, on_delete=models.CASCADE)
+    bar = models.ForeignKey(Bar, on_delete=models.CASCADE)
+    belop = models.DecimalField(max_digits=9, decimal_places=2, default=0)
+
+    def sum(self):
+        return self.belop
+
+    class Meta:
+        verbose_name_plural = "BSF-regninger"
+        verbose_name = "BSF-regning"
+
+
+class Innskudd(Transaksjon):
+    belop = models.DecimalField(max_digits=9, decimal_places=2)
+    godkjent = models.BooleanField(default=False)
+    er_utlegg = models.BooleanField(default=False)
+
+    def sum(self):
+        return self.belop
+
+    class Meta:
+        verbose_name_plural = "Innskudd"
