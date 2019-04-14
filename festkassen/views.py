@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Festkassekonto, Innskudd
+from .models import Festkassekonto, Innskudd, BSFregning, Kryss
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django import forms
@@ -8,10 +8,24 @@ from django import forms
 @login_required
 def forside(request):
 
+    # Sjekk om den påloggete brukeren har festkassekonto
     if not har_brukeren_festkassekonto(request):
         return render(request, 'festkassen/ingen_festkassekonto.html', {})
 
-    context = {}
+    # Hent transaksjonsdata fra festkassens backend
+    festkassekonto = Festkassekonto.objects.get(regiweb_bruker=request.user)
+    innskudd = Innskudd.objects.filter(festkassekonto=festkassekonto).order_by('-tidsstempel')
+    bsf_regninger = BSFregning.objects.filter(festkassekonto=festkassekonto).order_by('-tidsstempel')
+    kryss = Kryss.objects.filter(festkassekonto=festkassekonto).order_by('-tidsstempel')
+    saldo = festkassekonto.saldo()
+
+    context = {
+        'innskudd': innskudd,
+        'bsf_regninger': bsf_regninger,
+        'kryss': kryss,
+        'saldo': saldo
+    }
+
     return render(request, 'festkassen/forside.html', context)
 
 

@@ -5,7 +5,70 @@
     <title>Festkassen</title>
 </head>
 <body>
+
     <h2>din forside for festkassen</h2>
     <a href="{% url 'festkassen:innskudd' %}">Innskudd</a>
+
+    <h2>saldo = {{ saldo }}</h2>
+
+    <h3> Siste innskudd &#10003</h3>
+    <table>
+        <tr>
+            <th>Tidsstempel</th>
+            <th>Sum</th>
+            <th>Godkjent</th>
+        </tr>
+        {% for i in innskudd %}
+            <tr>
+                <td>{{ i.tidsstempel }}</td>
+                <td>{{ i.sum }}</td>
+                <td>
+                    {% if i.godkjent %}
+                        &#10003 <!-- checkmark-->
+                    {% else %}
+                        &#10060 <!-- kryss-->
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h3> Siste BSF-regninger </h3>
+    <table>
+        <tr>
+            <th>Tidsstempel</th>
+            <th>Sum</th>
+            <th>Bar</th>
+            <th>BSF</th>
+        </tr>
+        {% for i in bsf_regninger %}
+            <tr>
+                <td>{{ i.tidsstempel }}</td>
+                <td>{{ i.sum }}</td>
+                <td>{{ i.bar }}</td>
+                <td>{{ i.bsf }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h3> Siste kryss </h3>
+    <table>
+        <tr>
+            <th>Tidsstempel</th>
+            <th>Vare</th>
+            <th>Antall</th>
+            <th>sum</th>
+            <th>Krysseliste</th>
+        </tr>
+        {% for i in kryss %}
+            <tr>
+                <td>{{ i.tidsstempel }}</td>
+                <td>{{ i.vare }}</td>
+                <td>{{ i.antall }}</td>
+                <td>{{ i.sum }}</td>
+                <td>{{ i.krysseliste }}</td>
+            </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>

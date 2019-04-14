@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+import itertools
+
 
 
 # Festkasserelaterte ting
@@ -34,6 +36,15 @@ class Festkassekonto(models.Model):
         verbose_name="Aktiv konto",
         help_text="Markerer om festkassebrukeren er aktiv. Kryss av her heller enn å slette brukeren"
     )
+
+    def saldo(self):
+        kryss = Kryss.objects.filter(festkassekonto=self)
+        bsf_regninger = BSFregning.objects.filter(festkassekonto=self)
+        innskudd = Innskudd.objects.filter(festkassekonto=self).filter(godkjent=True)
+
+        transaksjoner = itertools.chain(kryss, bsf_regninger, innskudd)
+        saldo = sum([transaksjon.sum() for transaksjon in transaksjoner])
+        return saldo
 
     class Meta:
         verbose_name_plural = "Festkassekontoer"
