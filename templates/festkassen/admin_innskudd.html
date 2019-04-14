@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th></th>
+            <th>ID</th>
+            <th>Festkassekonto</th>
+            <th>Dato</th>
+            <th>Sum</th>
+            <th>kommentar</th>
+        </tr>
+        {% for i in ventende_innskudd %}
+            <tr>
+                <td>
+                    <a href="{% url 'festkassen:admin_godkjenn_innskudd' i.pk %}">
+                        <button>&#10003</button>
+                    </a>
+                </td>
+                <td>{{ i.pk }}</td>
+                <td>{{ i.festkassekonto }}</td>
+                <td>{{ i.tidsstempel }}</td>
+                <td>{{ i.sum }}</td>
+                <td>{{ i.kommentar }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <h2>godkjente innskudd</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Festkassekonto</th>
+            <th>Dato</th>
+            <th>Sum</th>
+            <th>kommentar</th>
+        </tr>
+        {% for i in godkjente_innskudd %}
+            <tr>
+                <td>{{ i.pk }}</td>
+                <td>{{ i.festkassekonto }}</td>
+                <td>{{ i.tidsstempel }}</td>
+                <td>{{ i.sum }}</td>
+                <td>{{ i.kommentar }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,16 +1,19 @@
 from django.shortcuts import render
 from .models import Festkassekonto, Innskudd, BSFregning, Kryss
-from django.http import HttpResponse
-from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth.decorators import login_required, user_passes_test
+from django.urls import reverse
 from django import forms
+from django.contrib.auth.models import User, Group
+
+
+def har_brukeren_festkassekonto(user):
+    return Festkassekonto.objects.filter(regiweb_bruker=user).exists()
 
 
 @login_required
+@user_passes_test(har_brukeren_festkassekonto)
 def forside(request):
-
-    # Sjekk om den påloggete brukeren har festkassekonto
-    if not har_brukeren_festkassekonto(request):
-        return render(request, 'festkassen/ingen_festkassekonto.html', {})
 
     # Hent transaksjonsdata fra festkassens backend
     festkassekonto = Festkassekonto.objects.get(regiweb_bruker=request.user)
@@ -30,10 +33,8 @@ def forside(request):
 
 
 @login_required
+@user_passes_test(har_brukeren_festkassekonto)
 def innskudd(request):
-
-    if not har_brukeren_festkassekonto(request):
-        return render(request, 'festkassen/ingen_festkassekonto.html', {})
 
     festkassekonto = Festkassekonto.objects.filter(regiweb_bruker=request.user).first()
     innskuddskjema = Innskuddskjema()
@@ -63,13 +64,43 @@ def innskudd(request):
     return render(request, 'festkassen/innskudd.html', context)
 
 
-def har_brukeren_festkassekonto(request):
-    festkassekonto = Festkassekonto.objects.filter(regiweb_bruker=request.user).first()
-    if festkassekonto:
-        return True
-    return False
-
-
 class Innskuddskjema(forms.Form):
     sum = forms.DecimalField(max_digits=9, decimal_places=2, min_value=0)
     kommentar = forms.CharField(max_length=200, required=False)
+
+
+# ---------------------------------------------
+# Festkasse-admin
+# ---------------------------------------------
+
+def er_festkasse(user):
+    return user.groups.filter(name='Festkasse').exists()
+
+
+@login_required
+@user_passes_test(er_festkasse)
+def admin(request):
+    context = {}
+    return render(request, 'festkassen/admin.html', context)
+
+
+@login_required
+@user_passes_test(er_festkasse)
+def admin_innskudd(request):
+    ventende_innskudd = Innskudd.objects.filter(godkjent=False).order_by('-tidsstempel')
+    godkjente_innskudd = Innskudd.objects.filter(godkjent=True).order_by('-tidsstempel')[:30]
+    context = {
+        'ventende_innskudd': ventende_innskudd,
+        'godkjente_innskudd': godkjente_innskudd,
+    }
+    return render(request, 'festkassen/admin_innskudd.html', context)
+
+
+@login_required
+@user_passes_test(er_festkasse)
+def admin_godkjenn_innskudd(request, innskudd_pk):
+    godkjent_innskudd = Innskudd.objects.get(pk=innskudd_pk)
+    godkjent_innskudd.godkjent = True
+    godkjent_innskudd.save()
+
+    return HttpResponseRedirect(reverse('festkassen:admin_innskudd'))
