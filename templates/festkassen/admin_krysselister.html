@@ -5,6 +5,9 @@
     <title>Title</title>
 </head>
 <body>
+{% if tilbakemelding %}
+    <h2> {{ tilbakemelding }} </h2>
+{% endif %}
 <div>
     <form action="{% url 'festkassen:admin_krysselister' %}" method="post">
         {% csrf_token %}

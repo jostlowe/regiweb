@@ -117,10 +117,28 @@ def admin_godkjenn_innskudd(request, innskudd_pk):
 @login_required
 @user_passes_test(er_festkasse)
 def admin_krysselister(request):
+
     krysselister = Krysseliste.objects.all().order_by('-listedato')[:30]
     nykrysselisteskjema = NyKrysselisteSkjema()
     context = {
         'krysselister': krysselister,
         'nykrysselisteskjema': nykrysselisteskjema,
     }
+
+    if request.method == 'POST':
+        nykrysselisteskjema = NyKrysselisteSkjema(request.POST)
+        if nykrysselisteskjema.is_valid():
+            ny_krysseliste = Krysseliste(
+                listedato=nykrysselisteskjema.cleaned_data['listedato'],
+                type=nykrysselisteskjema.cleaned_data['type'],
+                opprettet_av=request.user,
+            )
+            ny_krysseliste.save()
+            tilbakemelding = "Ny krysseliste registrert: %s" % (
+                ny_krysseliste,
+            )
+            context.update({
+                'tilbakemelding': tilbakemelding
+            })
+
     return render(request, 'festkassen/admin_krysselister.html', context)
