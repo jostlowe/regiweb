@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Festkassekonto, Innskudd, BSFregning, Kryss
+from .models import Festkassekonto, Innskudd, BSFregning, Kryss, Krysseliste
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.urls import reverse
@@ -104,3 +104,13 @@ def admin_godkjenn_innskudd(request, innskudd_pk):
     godkjent_innskudd.save()
 
     return HttpResponseRedirect(reverse('festkassen:admin_innskudd'))
+
+
+@login_required
+@user_passes_test(er_festkasse)
+def admin_krysselister(request):
+    krysselister = Krysseliste.objects.all().order_by('-dato')[:30]
+    context = {
+        'krysselister': krysselister,
+    }
+    return render(request, 'festkassen/admin_krysselister.html', context)
