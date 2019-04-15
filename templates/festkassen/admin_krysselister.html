@@ -5,14 +5,23 @@
     <title>Title</title>
 </head>
 <body>
+<div>
+    <form action="{% url 'festkassen:admin_krysselister' %}" method="post">
+        {% csrf_token %}
+        {{ nykrysselisteskjema.as_p }}
+        <input type="submit" value="registrer">
+    </form>
+</div>
 <table>
         <tr>
+            <th>ID</th>
             <th>Listedato</th>
             <th>Type</th>
         </tr>
         {% for krysseliste in krysselister %}
             <tr>
-                <td>{{ krysseliste.dato }}</td>
+                <td>{{ krysseliste.pk }}</td>
+                <td>{{ krysseliste.listedato }}</td>
                 <td>{{ krysseliste.type }}</td>
             </tr>
         {% endfor %}

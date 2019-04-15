@@ -93,7 +93,7 @@ class Krysselistetype(models.Model):
 
 
 class Krysseliste(models.Model):
-    dato = models.DateTimeField(default=timezone.now)
+    listedato = models.DateField(default=timezone.now)
     opprettet_av = models.ForeignKey(User, on_delete=models.CASCADE)
     type = models.ForeignKey(Krysselistetype, on_delete=models.CASCADE)
 
@@ -101,7 +101,7 @@ class Krysseliste(models.Model):
         verbose_name_plural = "Krysselister"
 
     def __str__(self):
-        return "%s (%s)" % (self.type , str(self.dato))
+        return "%s (%s)" % (self.type, str(self.listedato))
 
 
 # Modeller for BSF

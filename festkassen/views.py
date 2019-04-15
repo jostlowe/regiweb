@@ -11,6 +11,11 @@ def har_brukeren_festkassekonto(user):
     return Festkassekonto.objects.filter(regiweb_bruker=user).exists()
 
 
+class Innskuddskjema(forms.Form):
+    sum = forms.DecimalField(max_digits=9, decimal_places=2, min_value=0)
+    kommentar = forms.CharField(max_length=200, required=False)
+
+
 @login_required
 @user_passes_test(har_brukeren_festkassekonto)
 def forside(request):
@@ -64,11 +69,6 @@ def innskudd(request):
     return render(request, 'festkassen/innskudd.html', context)
 
 
-class Innskuddskjema(forms.Form):
-    sum = forms.DecimalField(max_digits=9, decimal_places=2, min_value=0)
-    kommentar = forms.CharField(max_length=200, required=False)
-
-
 # ---------------------------------------------
 # Festkasse-admin
 # ---------------------------------------------
@@ -76,6 +76,14 @@ class Innskuddskjema(forms.Form):
 def er_festkasse(user):
     return user.groups.filter(name='Festkasse').exists()
 
+
+class NyKrysselisteSkjema(forms.ModelForm):
+    class Meta:
+        model = Krysseliste
+        fields = ('listedato', 'type')
+        widgets = {
+            'listedato': forms.DateInput(attrs={'type': 'date'})
+        }
 
 @login_required
 @user_passes_test(er_festkasse)
@@ -109,8 +117,10 @@ def admin_godkjenn_innskudd(request, innskudd_pk):
 @login_required
 @user_passes_test(er_festkasse)
 def admin_krysselister(request):
-    krysselister = Krysseliste.objects.all().order_by('-dato')[:30]
+    krysselister = Krysseliste.objects.all().order_by('-listedato')[:30]
+    nykrysselisteskjema = NyKrysselisteSkjema()
     context = {
         'krysselister': krysselister,
+        'nykrysselisteskjema': nykrysselisteskjema,
     }
     return render(request, 'festkassen/admin_krysselister.html', context)
