@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Festkassekonto, Innskudd, BSFregning, Kryss, Krysseliste
+from .models import Festkassekonto, Innskudd, BSFregning, Kryss, Krysseliste, Vare
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.urls import reverse
@@ -155,9 +155,15 @@ def admin_interne_krysselister(request):
 def admin_rediger_krysseliste(request, krysseliste_pk):
     kryss = Kryss.objects.filter(krysseliste=krysseliste_pk)
     kryssliste = Krysseliste.objects.get(pk=krysseliste_pk)
+
+    # Hent ut kolonner i riktig rekkefølge
+    kolonnenavn = json.loads(kryssliste.type.kolonner)
+    varer = [Vare.objects.get(navn=kolonne) for kolonne in kolonnenavn]
+
     context = {
         'kryss': kryss,
         'krysseliste': kryssliste,
+        'varer': varer
     }
     return render(request, 'festkassen/admin_rediger_krysseliste.html', context)
 
