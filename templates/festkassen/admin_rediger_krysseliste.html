@@ -22,9 +22,27 @@
                 <td>{{ enkeltkryss.antall }}</td>
                 <td>{{ enkeltkryss.stykkpris }}</td>
                 <td>{{ enkeltkryss.sum }}</td>
-                <td> <a href="derp"> Slett </a></td>
+                <td> <a href= {% url 'festkassen:admin_slett_kryss' krysseliste.pk enkeltkryss.pk %}> Slett </a></td>
             </tr>
         {% endfor %}
     </table>
+
+    <form action="{% url 'festkassen:admin_rediger_krysseliste' krysseliste.pk%}" method="post">
+        {% csrf_token %}
+        <label for="konto">Konto</label>
+        <select id="konto" name="konto" autofocus>
+            {% for konto in kontoer %}
+                <option value={{ konto.pk }}>{{ konto }}</option>
+            {% endfor %}
+        </select>
+        <p>
+        {% for vare in varer %}
+            <label for="{{ vare.navn }}">{{ vare.navn }}</label>
+            <input type="number" name="{{ vare.navn }}" id="{{ vare.navn }}" value=0>
+        {% endfor %}
+        </p>
+
+        <input type="submit" value="Registrer">
+    </form>
 </body>
 </html>

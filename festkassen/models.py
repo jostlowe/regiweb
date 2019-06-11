@@ -53,7 +53,7 @@ class Festkassekonto(models.Model):
         if self.regiweb_bruker:
             bruker = self.regiweb_bruker.username
             fullt_navn = self.regiweb_bruker.get_full_name()
-            return "%s (%s)" % (bruker, fullt_navn)
+            return "%s (%s)" % (fullt_navn, bruker)
         else:
             return "Uassosiert festkassekonto"
 

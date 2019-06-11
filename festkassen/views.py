@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Festkassekonto, Innskudd, BSFregning, Kryss, Krysseliste, Vare
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required, user_passes_test
@@ -160,10 +160,32 @@ def admin_rediger_krysseliste(request, krysseliste_pk):
     kolonnenavn = json.loads(kryssliste.type.kolonner)
     varer = [Vare.objects.get(navn=kolonne) for kolonne in kolonnenavn]
 
+    # Hent alle regifanter på denne lista
+    kontoer = kryssliste.type.festkassekontoer_paa_lista.all()
+
     context = {
         'kryss': kryss,
         'krysseliste': kryssliste,
-        'varer': varer
+        'varer': varer,
+        'kontoer': kontoer
     }
+
+    if request.method == "POST":
+        konto = Festkassekonto.objects.get(pk=int(request.POST['konto']))
+        nytt_kryss = Kryss(
+            festkassekonto=konto,
+            vare=Vare.objects.get(pk=1),
+            antall=1,
+            stykkpris=20,
+            krysseliste=kryssliste
+        )
+        nytt_kryss.save()
+
     return render(request, 'festkassen/admin_rediger_krysseliste.html', context)
 
+
+@login_required
+@user_passes_test(er_festkasse)
+def admin_slett_kryss(request, krysseliste_pk, kryss_pk):
+    Kryss.objects.get(pk=kryss_pk).delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))

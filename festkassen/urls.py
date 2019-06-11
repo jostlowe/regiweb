@@ -10,5 +10,6 @@ urlpatterns = [
     path('admin/godkjenn_innskudd/<int:innskudd_pk>', views.admin_godkjenn_innskudd, name='admin_godkjenn_innskudd'),
     path('admin/krysselister', views.admin_interne_krysselister, name='admin_interne_krysselister'),
     path('admin/krysselister/<int:krysseliste_pk>', views.admin_rediger_krysseliste, name='admin_rediger_krysseliste'),
+    path('admin/krysselister/<int:krysseliste_pk>/slett/<int:kryss_pk>', views.admin_slett_kryss, name='admin_slett_kryss'),
 ]
 
