@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>{{ krysseliste }}</h2>
+    <table>
+        <tr>
+            <th> Konto</th>
+            <th> Vare </th>
+            <th> Antall </th>
+            <th> Stykkpris </th>
+            <th> Sum </th>
+            <th></th>
+        </tr>
+        {% for enkeltkryss in kryss %}
+            <tr>
+                <td>{{ enkeltkryss.festkassekonto }}</td>
+                <td>{{ enkeltkryss.vare }}</td>
+                <td>{{ enkeltkryss.antall }}</td>
+                <td>{{ enkeltkryss.stykkpris }}</td>
+                <td>{{ enkeltkryss.sum }}</td>
+                <td> <a href="derp"> Slett </a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

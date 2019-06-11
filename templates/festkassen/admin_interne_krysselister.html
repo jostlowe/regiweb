@@ -9,7 +9,7 @@
     <h2> {{ tilbakemelding }} </h2>
 {% endif %}
 <div>
-    <form action="{% url 'festkassen:admin_krysselister' %}" method="post">
+    <form action="{% url 'festkassen:admin_interne_krysselister' %}" method="post">
         {% csrf_token %}
         {{ nykrysselisteskjema.as_p }}
         <input type="submit" value="registrer">
@@ -20,12 +20,14 @@
             <th>ID</th>
             <th>Listedato</th>
             <th>Type</th>
+            <th></th>
         </tr>
         {% for krysseliste in krysselister %}
             <tr>
                 <td>{{ krysseliste.pk }}</td>
                 <td>{{ krysseliste.listedato }}</td>
                 <td>{{ krysseliste.type }}</td>
+                <td><a href={% url 'festkassen:admin_rediger_krysseliste' krysseliste.pk%}>rediger</a></td>
             </tr>
         {% endfor %}
     </table>

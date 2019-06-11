@@ -4,7 +4,13 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.urls import reverse
 from django import forms
+import json
 from django.contrib.auth.models import User, Group
+
+
+# ---------------------------------------------
+# Festkasse-offentlig
+# ---------------------------------------------
 
 
 def har_brukeren_festkassekonto(user):
@@ -77,14 +83,6 @@ def er_festkasse(user):
     return user.groups.filter(name='Festkasse').exists()
 
 
-class NyKrysselisteSkjema(forms.ModelForm):
-    class Meta:
-        model = Krysseliste
-        fields = ('listedato', 'type')
-        widgets = {
-            'listedato': forms.DateInput(attrs={'type': 'date'})
-        }
-
 @login_required
 @user_passes_test(er_festkasse)
 def admin(request):
@@ -114,9 +112,17 @@ def admin_godkjenn_innskudd(request, innskudd_pk):
     return HttpResponseRedirect(reverse('festkassen:admin_innskudd'))
 
 
+class NyKrysselisteSkjema(forms.ModelForm):
+    class Meta:
+        model = Krysseliste
+        fields = ('listedato', 'type')
+        widgets = {
+            'listedato': forms.DateInput(attrs={'type': 'date'})
+        }
+
 @login_required
 @user_passes_test(er_festkasse)
-def admin_krysselister(request):
+def admin_interne_krysselister(request):
 
     krysselister = Krysseliste.objects.all().order_by('-listedato')[:30]
     nykrysselisteskjema = NyKrysselisteSkjema()
@@ -141,4 +147,17 @@ def admin_krysselister(request):
                 'tilbakemelding': tilbakemelding
             })
 
-    return render(request, 'festkassen/admin_krysselister.html', context)
+    return render(request, 'festkassen/admin_interne_krysselister.html', context)
+
+
+@login_required
+@user_passes_test(er_festkasse)
+def admin_rediger_krysseliste(request, krysseliste_pk):
+    kryss = Kryss.objects.filter(krysseliste=krysseliste_pk)
+    kryssliste = Krysseliste.objects.get(pk=krysseliste_pk)
+    context = {
+        'kryss': kryss,
+        'krysseliste': kryssliste,
+    }
+    return render(request, 'festkassen/admin_rediger_krysseliste.html', context)
+

@@ -6,7 +6,9 @@
 </head>
 <body>
     <h3>Bare for festkasse</h3>
-    <a href="{% url 'festkassen:admin_innskudd' %}">Godkjenn innskudd</a>
-    <a href="{% url 'festkassen:admin_krysselister' %}">Krysselister</a>
+    <ul>
+        <li><a href="{% url 'festkassen:admin_innskudd' %}">Godkjenn innskudd</a></li>
+        <li><a href="{% url 'festkassen:admin_interne_krysselister' %}">Se og endre interne krysselister</a></li>
+    </ul>
 </body>
 </html>

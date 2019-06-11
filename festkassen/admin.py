@@ -18,6 +18,11 @@ class KrysselisteAdmin(admin.ModelAdmin):
     list_display = ('__str__', 'opprettet_av')
 
 
+class KrysselistetypeAdmin(admin.ModelAdmin):
+    list_display = ('__str__', )
+    filter_horizontal = ('festkassekontoer_paa_lista',)
+
+
 class BSFAdmin(admin.ModelAdmin):
     list_display = ('__str__', 'dato')
 
@@ -60,7 +65,7 @@ admin.site.register(EksternDranker, EksternDrankerAdmin)
 admin.site.register(Eksternkrysseliste, EksternkrysselisteAdmin)
 admin.site.register(Vare, VareAdmin)
 admin.site.register(Krysseliste, KrysselisteAdmin)
-admin.site.register(Krysselistetype)
+admin.site.register(Krysselistetype, KrysselistetypeAdmin)
 admin.site.register(BSFregning)
 admin.site.register(Innskudd, InnskuddAdmin)
 admin.site.register(Kryss, KryssAdmin)

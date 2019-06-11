@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from django.contrib.postgres.fields import JSONField
 import itertools
 
 
@@ -84,6 +85,8 @@ class Vare(models.Model):
 class Krysselistetype(models.Model):
     navn = models.CharField(max_length=100)
     beskrivelse = models.CharField(max_length=200, blank=True, null=True)
+    festkassekontoer_paa_lista = models.ManyToManyField(Festkassekonto)
+    kolonner = JSONField(default=list)
 
     class Meta:
         verbose_name_plural = "Krysselistetyper"
@@ -93,7 +96,7 @@ class Krysselistetype(models.Model):
 
 
 class Krysseliste(models.Model):
-    listedato = models.DateField(default=timezone.now)
+    listedato = models.DateField()
     opprettet_av = models.ForeignKey(User, on_delete=models.CASCADE)
     type = models.ForeignKey(Krysselistetype, on_delete=models.CASCADE)
 

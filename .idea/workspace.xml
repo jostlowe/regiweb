@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c6ff421-503d-41ed-b7fd-524774f023cd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/festkassen/admin_rediger_krysseliste.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/regiweb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/regiweb.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/festkassen/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/festkassen/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/festkassen/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/festkassen/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/festkassen/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/festkassen/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/festkassen/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/festkassen/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/festkassen/admin_krysselister.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/festkassen/admin_krysselister.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/festkassen/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/festkassen/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/festkassen/admin_krysselister.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/festkassen/admin_interne_krysselister.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,24 +45,42 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/festkassen/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="133" column="41" selection-start-line="133" selection-start-column="41" selection-end-line="133" selection-end-column="41" />
+            <state relative-caret-position="492">
+              <caret line="160" selection-start-line="160" selection-end-line="160" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-                <element signature="e#2615#2667#0" />
-                <element signature="e#2718#2891#0" />
-                <element signature="e#3122#3490#0" />
-                <element signature="e#3596#3790#0" />
+                <element signature="e#4007#4932#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/festkassen/admin_krysselister.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/festkassen/admin_rediger_krysseliste.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+            <state relative-caret-position="390">
+              <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/felixdb/regifant.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/festkassen/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="88" column="35" selection-start-line="88" selection-start-column="35" selection-end-line="88" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -111,18 +135,20 @@
         <option value="$PROJECT_DIR$/static/generisk/ekstern_base.css" />
         <option value="$PROJECT_DIR$/felixdb/models.py" />
         <option value="$PROJECT_DIR$/templates/felixdb/regifant.html" />
-        <option value="$PROJECT_DIR$/festkassen/admin.py" />
         <option value="$PROJECT_DIR$/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/static/login/login.css" />
         <option value="$PROJECT_DIR$/templates/festkassen/innskudd.html" />
         <option value="$PROJECT_DIR$/templates/festkassen/forside.html" />
         <option value="$PROJECT_DIR$/templates/festkassen/admin_godkjenn_innskudd.html" />
         <option value="$PROJECT_DIR$/templates/festkassen/admin_innskudd.html" />
-        <option value="$PROJECT_DIR$/festkassen/urls.py" />
-        <option value="$PROJECT_DIR$/templates/festkassen/admin.html" />
-        <option value="$PROJECT_DIR$/festkassen/models.py" />
-        <option value="$PROJECT_DIR$/festkassen/views.py" />
         <option value="$PROJECT_DIR$/templates/festkassen/admin_krysselister.html" />
+        <option value="$PROJECT_DIR$/templates/festkassen/admin.html" />
+        <option value="$PROJECT_DIR$/festkassen/urls.py" />
+        <option value="$PROJECT_DIR$/templates/festkassen/admin_interne_krysselister.html" />
+        <option value="$PROJECT_DIR$/festkassen/admin.py" />
+        <option value="$PROJECT_DIR$/festkassen/views.py" />
+        <option value="$PROJECT_DIR$/templates/festkassen/admin_rediger_krysseliste.html" />
+        <option value="$PROJECT_DIR$/festkassen/models.py" />
       </list>
     </option>
   </component>
@@ -157,6 +183,12 @@
               <item name="regiweb" type="b2602c69:ProjectViewProjectNode" />
               <item name="regiweb" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="felixdb" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="regiweb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="regiweb" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="festkassen" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -175,23 +207,23 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/generisk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/festkassen" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.project" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/generisk" />
+      <recent name="$PROJECT_DIR$/felixdb" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/festkassen" />
       <recent name="$PROJECT_DIR$/static/generisk" />
       <recent name="$PROJECT_DIR$/static/hjem" />
       <recent name="$PROJECT_DIR$/templates/hjem" />
       <recent name="$PROJECT_DIR$/static/login" />
-      <recent name="$PROJECT_DIR$/templates/registration" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/static/generisk" />
-      <recent name="$PROJECT_DIR$/felixdb" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -294,6 +326,9 @@
       <workItem from="1555239844798" duration="8234000" />
       <workItem from="1555353642663" duration="3365000" />
       <workItem from="1555359566884" duration="569000" />
+      <workItem from="1560071500338" duration="328000" />
+      <workItem from="1560071843470" duration="6233000" />
+      <workItem from="1560235838032" duration="2676000" />
     </task>
     <task id="LOCAL-00001" summary="La til krysselisteoversikt">
       <created>1555356499065</created>
@@ -313,29 +348,37 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102428000" />
+    <option name="totallyTimeSpent" value="111665000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="964" height="1042" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30439562" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32747254" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32857144" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27680525" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.24179432" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32932165" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3286026" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.2286652" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3278867" />
-      <window_info anchor="bottom" id="Elm Compiler" order="13" weight="0.32932165" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32822758" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2286652" />
+      <window_info anchor="bottom" id="Elm Compiler" order="12" weight="0.32932165" />
+      <window_info anchor="bottom" id="Python Console" order="13" weight="0.32713348" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -344,27 +387,29 @@
       <window_info anchor="right" id="Elm" order="5" weight="0.32967034" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17802198" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32747254" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32857144" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2791209" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.24179432" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32932165" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32932165" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.22967033" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32822758" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32822758" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.2286652" />
+      <window_info anchor="bottom" id="Elm Compiler" order="12" weight="0.32932165" />
+      <window_info anchor="bottom" id="Python Console" order="13" weight="0.32713348" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" weight="0.32967034" />
+      <window_info anchor="right" id="Elm" order="5" weight="0.32967034" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -416,20 +461,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="La til ikke-fungerende form for å legge til nye krysselister" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/db/models/fields/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1366">
-          <caret line="1812" column="24" selection-start-line="1812" selection-start-column="24" selection-end-line="1812" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/utils/translation/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2141">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/registration/logout.html" />
     <entry file="file://$PROJECT_DIR$/templates/felixdb/verv.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -479,13 +510,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/felixdb/ukeverv.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -611,20 +635,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/felixdb/regifant.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/felixdb/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/db/migrations/questioner.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -667,13 +677,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/felixdb/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/hjem/intern.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -702,23 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/festkassen/admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/festkassen/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="43" lean-forward="true" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/festkassen/innskudd.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -726,41 +712,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/festkassen/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/festkassen/ingen_festkassekonto.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/festkassen/admin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="195">
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/festkassen/models.py">
+    <entry file="file://$PROJECT_DIR$/felixdb/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="103" column="36" selection-start-line="103" selection-start-column="36" selection-end-line="103" selection-end-column="36" />
+        <state relative-caret-position="30">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/festkassen/admin_interne_krysselister.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="71" selection-start-line="29" selection-start-column="71" selection-end-line="29" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/festkassen/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="115" selection-start-line="11" selection-start-column="115" selection-end-line="11" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/felixdb/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/felixdb/ukeverv.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/festkassen/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="22" column="53" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/felixdb/regifant.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/festkassen/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="133" column="41" selection-start-line="133" selection-start-column="41" selection-end-line="133" selection-end-column="41" />
+        <state relative-caret-position="492">
+          <caret line="160" selection-start-line="160" selection-end-line="160" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#2615#2667#0" />
-            <element signature="e#2718#2891#0" />
-            <element signature="e#3122#3490#0" />
-            <element signature="e#3596#3790#0" />
+            <element signature="e#4007#4932#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/festkassen/admin_krysselister.html">
+    <entry file="file://$PROJECT_DIR$/templates/festkassen/admin_rediger_krysseliste.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        <state relative-caret-position="390">
+          <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/festkassen/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="88" column="35" selection-start-line="88" selection-start-column="35" selection-end-line="88" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
