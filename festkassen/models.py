@@ -4,7 +4,6 @@ from django.utils import timezone
 import itertools
 
 
-
 class Vare(models.Model):
     navn = models.CharField(max_length=50)
     beskrivelse = models.CharField(max_length=200, null=True, blank=True)
@@ -178,6 +177,7 @@ class Krysseliste(models.Model):
     def __str__(self):
         return "%s (%s)" % (self.type, str(self.listedato))
 
+
 class Transaksjon(models.Model):
     tidsstempel = models.DateTimeField(default=timezone.now)
     festkassekonto = models.ForeignKey(Festkassekonto, on_delete=models.CASCADE)
@@ -200,7 +200,10 @@ class Kryss(Transaksjon):
     krysseliste = models.ForeignKey(Krysseliste, on_delete=models.CASCADE)
 
     def sum(self):
-        return self.antall*self.stykkpris
+        if self.vare.er_additiv:
+            return self.antall*self.stykkpris
+        else:
+            return -self.antall*self.stykkpris
 
     class Meta:
         verbose_name_plural = "Kryss"
