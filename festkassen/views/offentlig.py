@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django import forms
 
-from ..models import Festkassekonto, Innskudd, BSFregning, Kryss, Krysseliste, Vare
+from ..models import Festkassekonto, Innskudd, BSFregning, Kryss
 from .admin import har_brukeren_festkassekonto
 
 
