@@ -4,10 +4,9 @@
     <list default="true" id="4c6ff421-503d-41ed-b7fd-524774f023cd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/festkassen/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/festkassen/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/festkassen/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/festkassen/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/festkassen/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/festkassen/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/festkassen/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/festkassen/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/festkassen/admin_rediger_krysseliste.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/festkassen/admin_rediger_krysseliste.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/festkassen/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="182" lean-forward="true" selection-start-line="182" selection-end-line="182" />
+            <state relative-caret-position="537">
+              <caret line="162" column="22" selection-start-line="162" selection-start-column="22" selection-end-line="162" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -50,8 +49,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/festkassen/admin_rediger_krysseliste.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="563">
-              <caret line="39" column="63" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
+            <state relative-caret-position="323">
+              <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -59,10 +58,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/festkassen/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1875">
-              <caret line="55" column="49" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
+            <state relative-caret-position="-1485">
+              <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/festkassen/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="22" column="59" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -127,17 +138,18 @@
         <option value="$PROJECT_DIR$/templates/festkassen/admin_krysselister.html" />
         <option value="$PROJECT_DIR$/templates/festkassen/admin.html" />
         <option value="$PROJECT_DIR$/templates/festkassen/admin_interne_krysselister.html" />
-        <option value="$PROJECT_DIR$/festkassen/admin.py" />
         <option value="$PROJECT_DIR$/festkassen/urls.py" />
-        <option value="$PROJECT_DIR$/festkassen/models.py" />
         <option value="$PROJECT_DIR$/templates/festkassen/admin_rediger_krysseliste.html" />
+        <option value="$PROJECT_DIR$/festkassen/models.py" />
+        <option value="$PROJECT_DIR$/festkassen/admin.py" />
         <option value="$PROJECT_DIR$/festkassen/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="-4" />
     <option name="width" value="964" />
-    <option name="height" value="1042" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -145,6 +157,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -178,7 +191,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -312,7 +324,8 @@
       <workItem from="1560071500338" duration="328000" />
       <workItem from="1560071843470" duration="6233000" />
       <workItem from="1560235838032" duration="6584000" />
-      <workItem from="1560242578565" duration="3929000" />
+      <workItem from="1560242578565" duration="3997000" />
+      <workItem from="1560425374055" duration="3211000" />
     </task>
     <task id="LOCAL-00001" summary="La til krysselisteoversikt">
       <created>1555356499065</created>
@@ -342,11 +355,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560240365831</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Kryssing av interne lister er nesten fungerende">
+      <created>1560246552454</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1560246552454</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119502000" />
+    <option name="totallyTimeSpent" value="122781000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -358,15 +378,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="964" height="1042" extended-state="0" />
+    <frame x="-4" y="0" width="964" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17912088" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18351649" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32857144" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24175824" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.24074075" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -375,7 +395,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32822758" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.22857143" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.22766885" />
       <window_info anchor="bottom" id="Elm Compiler" order="12" weight="0.32932165" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.32637364" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -459,7 +479,8 @@
     <MESSAGE value="La til ikke-fungerende form for å legge til nye krysselister" />
     <MESSAGE value="Festkassen kan nå legge til og redigere interne krysselister" />
     <MESSAGE value="Kolonner lagt til som et JSON-formatert felt på krysselistetyper" />
-    <option name="LAST_COMMIT_MESSAGE" value="Kolonner lagt til som et JSON-formatert felt på krysselistetyper" />
+    <MESSAGE value="Kryssing av interne lister er nesten fungerende" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kryssing av interne lister er nesten fungerende" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/templates/felixdb/ukedetalj.html">
@@ -722,16 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/festkassen/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="22" column="53" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/core/management/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
@@ -781,27 +792,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/festkassen/models.py">
+    <entry file="file://$PROJECT_DIR$/festkassen/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1875">
-          <caret line="55" column="49" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
+        <state relative-caret-position="240">
+          <caret line="22" column="59" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/festkassen/admin_rediger_krysseliste.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="39" column="63" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
+        <state relative-caret-position="323">
+          <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/festkassen/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1485">
+          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/festkassen/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="182" lean-forward="true" selection-start-line="182" selection-end-line="182" />
+        <state relative-caret-position="537">
+          <caret line="162" column="22" selection-start-line="162" selection-start-column="22" selection-end-line="162" selection-end-column="22" />
         </state>
       </provider>
     </entry>

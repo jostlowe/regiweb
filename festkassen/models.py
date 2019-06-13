@@ -62,6 +62,12 @@ class Vare(models.Model):
     navn = models.CharField(max_length=50)
     beskrivelse = models.CharField(max_length=200, null=True, blank=True)
     standardpris = models.DecimalField(decimal_places=2, max_digits=7, default=0)
+    prioritet = models.IntegerField(default=10,
+                                    help_text= """
+                                    Bestemmer hvilken kolonne varen skal stå i på en liste
+                                    En lavere verdi vil putte varen lengre til venstre
+                                    på en liste
+                                    """)
     er_additiv = models.BooleanField(
         default=False,
         verbose_name="Er additiv",
@@ -85,7 +91,7 @@ class Krysselistetype(models.Model):
     navn = models.CharField(max_length=100)
     beskrivelse = models.CharField(max_length=200, blank=True, null=True)
     festkassekontoer_paa_lista = models.ManyToManyField(Festkassekonto)
-    kolonner = models.CharField(max_length= 200, default="")
+    varer = models.ManyToManyField(Vare)
 
     class Meta:
         verbose_name_plural = "Krysselistetyper"

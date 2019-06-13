@@ -11,7 +11,7 @@ class FestkassekontoAdmin(admin.ModelAdmin):
 
 
 class VareAdmin(admin.ModelAdmin):
-    list_display = ('__str__', 'standardpris', 'er_additiv', 'beskrivelse', )
+    list_display = ('__str__', 'standardpris', 'er_additiv', 'beskrivelse', 'prioritet')
 
 
 class KrysselisteAdmin(admin.ModelAdmin):
@@ -20,7 +20,7 @@ class KrysselisteAdmin(admin.ModelAdmin):
 
 class KrysselistetypeAdmin(admin.ModelAdmin):
     list_display = ('__str__', )
-    filter_horizontal = ('festkassekontoer_paa_lista',)
+    filter_horizontal = ('festkassekontoer_paa_lista', "varer")
 
 
 class BSFAdmin(admin.ModelAdmin):
