@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if tilbakemelding %}
+    <h2> {{ tilbakemelding }} </h2>
+{% endif %}
+<div>
+    <form action="{% url 'festkassen:admin_bsfer' %}" method="post">
+        {% csrf_token %}
+        {{ nybsfskjema.as_p }}
+        <input type="submit" value="registrer">
+    </form>
+</div>
+<table>
+        <tr>
+            <th>Dato</th>
+            <th>Kommentar</th>
+            <th></th>
+        </tr>
+        {% for bsf in bsfer %}
+            <tr>
+                <td>{{ bsf.dato }}</td>
+                <td>{{ bsf.beskrivelse }}</td>
+                <td><a href={% url 'festkassen:admin_rediger_bsf' bsf.pk %}>rediger</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

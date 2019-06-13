@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if tilbakemelding %}
+    <h2> {{ tilbakemelding }} </h2>
+{% endif %}
+<table>
+        <tr>
+            <th>Kryss</th>
+            <th></th>
+        </tr>
+        {% for enkeltkryss in kryss %}
+            <tr>
+                <td>{{ enkeltkryss }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
