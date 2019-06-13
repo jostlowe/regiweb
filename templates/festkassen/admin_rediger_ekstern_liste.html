@@ -10,12 +10,20 @@
 {% endif %}
 <table>
         <tr>
-            <th>Kryss</th>
+            <th>Person</th>
+            <th>Vare</th>
+            <th>Antall</th>
+            <th>Stykkpris</th>
+            <th>Sum</th>
             <th></th>
         </tr>
         {% for enkeltkryss in kryss %}
             <tr>
-                <td>{{ enkeltkryss }}</td>
+                <td>{{ enkeltkryss.person }}</td>
+                <td>{{ enkeltkryss.vare }}</td>
+                <td>{{ enkeltkryss.antall }}</td>
+                <td>{{ enkeltkryss.stykkpris }}</td>
+                <td>{{ enkeltkryss.sum }}</td>
             </tr>
         {% endfor %}
     </table>

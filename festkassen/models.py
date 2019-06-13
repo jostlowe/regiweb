@@ -79,7 +79,6 @@ class Festkassekonto(models.Model):
             return "Uassosiert festkassekonto"
 
 
-
 class Bar(models.Model):
     gjengnavn = models.CharField(max_length=100)
     barnavn = models.CharField(max_length=100, blank=True, null=True)
