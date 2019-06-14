@@ -56,9 +56,14 @@ class KryssAdmin(admin.ModelAdmin):
         return obj.sum()
 
 
+class BarAdmin(admin.ModelAdmin):
+    list_display = ('__str__',)
+    filter_horizontal = ('varer_paa_listene',)
+
+
 admin.site.register(Festkassekonto, FestkassekontoAdmin)
 admin.site.register(Festkassekontotype)
-admin.site.register(Bar)
+admin.site.register(Bar, BarAdmin)
 admin.site.register(BSF, BSFAdmin)
 admin.site.register(EksternTransaksjon, EksterntransaksjonAdmin)
 admin.site.register(EksternDranker, EksternDrankerAdmin)

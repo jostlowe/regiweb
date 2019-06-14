@@ -83,6 +83,7 @@ class Bar(models.Model):
     gjengnavn = models.CharField(max_length=100)
     barnavn = models.CharField(max_length=100, blank=True, null=True)
     aktiv = models.BooleanField(default=True)
+    varer_paa_listene = models.ManyToManyField(Vare)
 
     class Meta:
         verbose_name_plural = "Barer"

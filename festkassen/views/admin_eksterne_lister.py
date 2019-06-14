@@ -23,11 +23,13 @@ def admin_rediger_ekstern_liste(request, bsf_pk, liste_pk):
     kryss = EksternTransaksjon.objects.filter(eksternkrysseliste=liste_pk)
     bsf = BSF.objects.get(pk=bsf_pk)
     eksternliste = Eksternkrysseliste.objects.get(pk=liste_pk)
+    varer_paa_lista = Eksternkrysseliste.bar.varer_paa_listene.all()
 
     context = {
         'kryss': kryss,
         'bsf': bsf,
         'eksternliste': eksternliste,
+        'varer_paa_lista': varer_paa_lista
     }
 
     if request.method == "POST":
