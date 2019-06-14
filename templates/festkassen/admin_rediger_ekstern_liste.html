@@ -9,6 +9,14 @@
 {% if tilbakemelding %}
     <h2> {{ tilbakemelding }} </h2>
 {% endif %}
+
+<h3>Registrer nye eksternkryss</h3>
+<form action="{% url 'festkassen:admin_rediger_ekstern_liste' bsf.pk eksternliste.pk %}" method="post">
+    {% csrf_token %}
+    {{ nytteksternkryssskjema.as_p }}
+    <input type="submit" value="registrer">
+</form>
+
 <table>
         <tr>
             <th>Person</th>
