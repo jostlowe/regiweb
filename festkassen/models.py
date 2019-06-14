@@ -111,7 +111,7 @@ class BSF(models.Model):
 
 
 class Eksternkrysseliste(models.Model):
-    dato = models.DateTimeField(default=timezone.now)
+    dato = models.DateField(default=timezone.now)
     bar = models.ForeignKey(Bar, on_delete=models.CASCADE)
     bsf = models.ForeignKey(BSF, on_delete=models.CASCADE)
 
@@ -119,18 +119,22 @@ class Eksternkrysseliste(models.Model):
         verbose_name_plural = "Eksternkrysselister"
 
     def __str__(self):
-        return "%s (%s)" % (self.bar, self.dato.date())
+        return "%s (%s)" % (self.bar, self.dato)
 
 
 class EksternDranker(models.Model):
     navn = models.CharField(max_length=100)
+    kallenavn = models.CharField(max_length=100, null=True, blank=True, default="")
     bartilhorighet = models.ForeignKey(Bar, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name_plural = "Eksterne drankere"
 
     def __str__(self):
-        return self.navn
+        if self.kallenavn:
+            return "%s (%s)" % (self.navn, self.kallenavn)
+        else:
+            return self.navn
 
 
 class EksternTransaksjon(models.Model):
