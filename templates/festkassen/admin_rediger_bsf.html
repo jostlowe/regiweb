@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
+
 <body>
     <h2>{{ bsf.dato }} - {{ bsf.beskrivelse }}</h2>
+
+    <form action="{% url 'festkassen:admin_rediger_bsf' bsf.pk %}" method="post">
+        {% csrf_token %}
+        {{ nyEksternlisteSkjema.as_p }}
+        <input type="submit" value="registrer">
+    </form>
+
     <table>
         <tr>
             <th> Bar </th>

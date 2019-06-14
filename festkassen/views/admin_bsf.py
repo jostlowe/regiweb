@@ -16,6 +16,15 @@ class NyBsfSkjema(forms.ModelForm):
         }
 
 
+class NyEksternlisteSkjema(forms.ModelForm):
+    class Meta:
+        model = Eksternkrysseliste
+        fields = ('dato', 'bar')
+        widgets = {
+            'dato': forms.DateInput(attrs={'type': 'date'})
+        }
+
+
 @login_required
 @user_passes_test(er_festkasse)
 def admin_bsfer(request):
@@ -50,8 +59,27 @@ def admin_bsfer(request):
 def admin_rediger_bsf(request, bsf_pk):
     eksternlister = Eksternkrysseliste.objects.filter(bsf=bsf_pk)
     bsf = BSF.objects.get(pk=bsf_pk)
+    nyeksternlisteskjema = NyEksternlisteSkjema()
+
     context = {
         'bsf': bsf,
-        'eksternlister': eksternlister
+        'eksternlister': eksternlister,
+        'nyEksternlisteSkjema': nyeksternlisteskjema
     }
+
+    if request.method == 'POST':
+        nyeksternlisteskjema = NyEksternlisteSkjema(request.POST)
+        if nyeksternlisteskjema.is_valid():
+            ny_eksternliste = Eksternkrysseliste(
+                dato=nyeksternlisteskjema.cleaned_data['dato'],
+                bar=nyeksternlisteskjema.cleaned_data['bar'],
+                bsf=bsf
+            )
+            ny_eksternliste.save()
+            tilbakemelding = "Ny Eksternliste registrert: %s" % (
+                ny_eksternliste,
+            )
+            context.update({
+                'tilbakemelding': tilbakemelding
+            })
     return render(request, 'festkassen/admin_rediger_bsf.html', context)

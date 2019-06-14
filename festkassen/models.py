@@ -112,7 +112,6 @@ class BSF(models.Model):
 
 class Eksternkrysseliste(models.Model):
     dato = models.DateTimeField(default=timezone.now)
-    opprettet_av = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
     bar = models.ForeignKey(Bar, on_delete=models.CASCADE)
     bsf = models.ForeignKey(BSF, on_delete=models.CASCADE)
 
