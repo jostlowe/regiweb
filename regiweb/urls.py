@@ -20,6 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('intern/felixdb/', include('felixdb.urls')),
     path('intern/festkassen/', include('festkassen.urls')),
+    path('intern/wiki/', include('wiki.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('', include('hjem.urls')),
 ]

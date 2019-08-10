@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ tittel }}</title>
+    </head>
+    <body>
+        <h1>{{ object.tittel }}</h1>
+            {% with object.revisjon.latest as revisjon %}
+                <p> {{ revisjon.innhold }} </p>
+                <p> Dato endret: {{ revisjon.sist_endret }} av {{ revisjon.forfatter }} </p>
+                <p> Kommentar: {{ revisjon.kommentar }} </p>
+            {% endwith %}
+    </body>
+</html>

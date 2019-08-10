@@ -25,12 +25,13 @@ SECRET_KEY = 'vzkno-=1cm0t1x8moko89aib&be^h%$kb!tt+@(x*r=tra*=x#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.3', 'localhost']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'wiki.apps.WikiConfig',
     'felixdb.apps.FelixdbConfig',
     'hjem.apps.HjemConfig',
     'festkassen.apps.FestkassenConfig',
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'extra_views'
 ]
 
 MIDDLEWARE = [
