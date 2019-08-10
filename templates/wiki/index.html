@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Regi Wiki</title>
+    {% load static %}
+</head>
+<body>
+
+<h1>Velkommen til Wiki</h1>
+<h2>All informasjon du kommer til å trenge</h2>
+
+<ul>
+    {% for instance in object_list %}
+        <li>
+                <a href="{% url 'wiki:wikiside' instance.slug %}">{{ instance.tittel }}</a>
+        </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
